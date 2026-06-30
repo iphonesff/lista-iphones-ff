@@ -1,13 +1,22 @@
-function errorHandler(err, req, res, next) {
+const errorHandler = (err, req, res, next) => {
 
+    console.error("================================");
+    console.error("ERRO");
+    console.error("URL:", req.originalUrl);
+    console.error("Método:", req.method);
     console.error(err);
+    console.error("================================");
 
-    return res.status(500).json({
+    const status = err.status || 500;
 
-        erro: 'Erro interno do servidor.'
+    return res.status(status).json({
+
+        success: false,
+
+        message: err.message || "Erro interno do servidor."
 
     });
 
-}
+};
 
 module.exports = errorHandler;

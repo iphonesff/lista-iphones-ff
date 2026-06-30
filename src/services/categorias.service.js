@@ -1,18 +1,20 @@
 const igest = require("./igestClient");
 
-class CategoriasService{
+class CategoriasService {
 
-    async listarTodas(){
+    async listar(filtros = {}) {
 
-        return await igest.get("/categories",{
+        return await igest.get("/categories", {
 
-            per_page:100
+            per_page: 100,
+
+            ...filtros
 
         });
 
     }
 
-    async buscar(id){
+    async buscar(id) {
 
         return await igest.get(`/categories/${id}`);
 
