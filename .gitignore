@@ -1,0 +1,28 @@
+```gitignore
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.production
+.env.development
+
+# Logs
+*.log
+logs/
+
+# Build
+dist/
+build/
+
+# Cobertura de testes
+coverage/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+```
